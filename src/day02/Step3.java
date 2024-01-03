@@ -16,7 +16,7 @@ public class Step3 {//c s
             //3. 객체/변수 이용한 입력값 호출 메소드
                 // 객체/변수명.nextLine() : 엔터키가 입력되면 지금까지 입력된 모든 내용을 읽는다.
 
-            //[1] 객체 생성
+            //[1]
         new Scanner(System.in);
             //[2] 객체 생성했으면 담아야 변수(타입:객체의타입)가 된다.
         Scanner scanner = new Scanner(System.in);
