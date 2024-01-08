@@ -16,8 +16,8 @@ public class Team1_1 {   // class S
             // 현재 좌석 상태 출력
             System.out.println("\n------------------- 현재 좌석을 표시합니다. -------------------");
             System.out.printf("%13s\t %13s %13s\n","좌석1","좌석2","좌석3");
-            System.out.printf("%13s\t %13s %13s\n",좌석1,좌석2,좌석3);
-            System.out.printf("%12s시\t %12s시\t %12s시\n",좌석1시,좌석2시,좌석3시);
+            System.out.printf("%13s\t %12s시 %13s\n",좌석1,좌석2,좌석3);
+            System.out.printf("%12s시\t %12s시\t %12s분\n",좌석1시,좌석2시,좌석3시);
             System.out.printf("%12s분\t %12s분\t %12s분\n",좌석1분,좌석2분,좌석3분);
             System.out.println("------------------------------------------------------------");
 
