@@ -6,7 +6,7 @@ public class Step6 {//c s
     public static void main(String[] args) {//m s
         Scanner scanner = new Scanner(System.in);
 
-        String 전화번호부 = "";
+        String 전화번호부 = "김현수,010-3913-2072/유재석,010-1234-1234/강호동,010-7777-7777/";
         String name ="";
         String num = "";
 
@@ -42,11 +42,16 @@ public class Step6 {//c s
                     System.out.print("삭제할 순번 : ");
                     int dNo = scanner.nextInt();
 
+                    String 복제 = "";
                     for(int i = 0 ; i<전화번호부.split("/").length ; i++){
-                        if(i==(dNo-1)) {
-                            전화번호부 = 전화번호부.split("/")[i] = "";
+
+                        if(i!=dNo-1) {
+                            //System.out.println(i);
+                            //System.out.println(전화번호부.split("/")[i]);
+                            복제 += 전화번호부.split("/")[i]+"/";
                         }
                     }
+                    전화번호부 = 복제;
 
 
                 }//if2 e
