@@ -9,6 +9,7 @@ public class BankApplication {//실행클래스
     //여러개의 account 객체를 저장하는 배열
     static Account[] accounts = new Account[100];
 
+
     //main() 함수가 아닌 main() 밖에 정적필드로 선언하는 이유 : 여럿 함수에서 사용하려고
     static Scanner scanner = new Scanner(System.in);
     //2.생성자
