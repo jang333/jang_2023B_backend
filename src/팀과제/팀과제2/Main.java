@@ -8,6 +8,13 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        Service basic = new Service("베이직", 10000,"5GB",1,2);
+        Service standard = new Service("스탠다드",20000,"10GB",1,2);
+        Service premium = new Service("프리미엄",30000,"15GB",1,10);
+        System.out.println(basic);
+        System.out.println(standard);
+        System.out.println(premium);
+
         int no = 0;
         while (true){
             System.out.println("------------------------");
@@ -47,18 +54,62 @@ public class Main {
                     memberInfos[i].pw.equals(inPw);
 
                 }//ch2 for e
+                while (true) {
+                    System.out.println("-----------------------------");
+                    System.out.println("1.구독신청 | 2.사용현황 | 3.종료");
+                    System.out.println("선택 > ");
+                    int ch2 = scanner.nextInt();
 
-                System.out.println("----------------------");
-                System.out.println("1.구독신청 | 2.사용현황 | 3.종료");
-                System.out.println("선택 > ");
-                int ch2 = scanner.nextInt();
+                    if (ch2 == 1) {
 
-                if(ch2 ==1){}
-                else if(ch2==2){}
-                else if(ch2==3){
-                    System.out.println("종료되었습니다.");
-                    break;
-                }
+                        System.out.println("-------------------------------");
+                        System.out.println("1.베이직 | 2.스탠다드 | 3.프리미엄");
+                        System.out.println("선택 > ");
+                        int ch3 = scanner.nextInt();
+
+                        if (ch3 == 1) {
+                            System.out.print("이용할 달 : ");
+                            int mon = scanner.nextInt();
+
+                            int price = mon * basic.price;
+
+                            System.out.println("요금제 : " + basic._class);
+                            System.out.println("용량 : " + basic.tb);
+                            System.out.println("인원수 : " + basic.nOfP);
+                            System.out.println("요금 : " + price + "원");
+
+
+                        } else if (ch3 == 2) {
+                            System.out.print("이용할 달 : ");
+                            int mon = scanner.nextInt();
+
+                            int price = mon * standard.price;
+
+                            System.out.println("요금제 : " + standard._class);
+                            System.out.println("용량 : " + standard.tb);
+                            System.out.println("인원수 : " + standard.nOfP);
+                            System.out.println("요금 : " + price + "원");
+
+                        } else if (ch3 == 3) {
+                            System.out.print("이용할 달 : ");
+                            int mon = scanner.nextInt();
+
+                            int price = mon * premium.price;
+
+                            System.out.println("요금제 : " + premium._class);
+                            System.out.println("용량 : " + premium.tb);
+                            System.out.println("인원수 : " + premium.nOfP);
+                            System.out.println("요금 : " + price + "원");
+                        }
+
+                    } else if (ch2 == 2) {
+
+                    } else if (ch2 == 3) {
+                        System.out.println("종료되었습니다.");
+                        return;
+                    }
+
+                }//w2 e
 
             }//ch2 if e
 

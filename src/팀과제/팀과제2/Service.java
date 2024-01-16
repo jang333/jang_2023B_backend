@@ -11,9 +11,24 @@ public class Service {
     int nOfP;
 
     //2.생성자
-    void _class(){
-
+    Service(String _class, int price, String tb, int month, int nOfP ){
+        this._class = _class;
+        this.price = price;
+        this.tb = tb;
+        this.month = month;
+        this.nOfP = nOfP;
     }
 
+    @Override
+    public String toString() {
+        return "Service{" +
+                "no=" + no +
+                ", _class='" + _class + '\'' +
+                ", price=" + price +
+                ", tb='" + tb + '\'' +
+                ", month=" + month +
+                ", nOfP=" + nOfP +
+                '}';
+    }
     //3.메소드
 }
