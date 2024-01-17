@@ -10,6 +10,7 @@ public class Member {
     String name;
     String num;
     int age;
+
     //2. 생성자
 
     @Override

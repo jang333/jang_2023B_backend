@@ -8,7 +8,7 @@ public class MemberSys {
 
 		Scanner sc = new Scanner(System.in);
 
-		Member[] array = new Member[100];
+		Member[] members = new Member[100];
 		
 		while(true) {
 
@@ -35,12 +35,41 @@ public class MemberSys {
 				mem.num=num;
 				mem.age=age;
 
-				for(int i =0 ; i < array.length; i++){
+				for(int i = 0 ; i <members.length; i++){
+					if(members[i]==null) {
+						members[i] = mem;
+						break;
+					}
+				}
 
+				for(int i=0; i< members.length; i++){
+					if(members[i]!=null){
+						System.out.println(members[i]);
+					}
 				}
 
 			}
 			else if( ch == 2 ) {
+				System.out.print("아이디 : ");
+				String inId = sc.next();
+				System.out.print("비밀번호 : ");
+				String inPw = sc.next();
+
+				for(int i = 0 ; i < members.length; i++){
+					if(members[i]==null)break;
+					if(inId.equals(members[i].id)){
+						if(inPw.equals(members[i].pw)){
+							System.out.println("로그인 성공");
+						}else{
+							System.out.println("로그인 실패");
+						}
+					}else {
+						System.out.println("로그인 실패");
+						break;
+					}
+				}
+
+
 
 			}
 
