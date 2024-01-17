@@ -18,6 +18,14 @@ public class Service {
         this.month = month;
         this.nOfP = nOfP;
     }
+    Service(int no, String _class, String tb, int month, int nOfP){
+        this.no=no;
+        this._class = _class;
+        this.tb = tb;
+        this.month = month;
+        this.nOfP = nOfP;
+
+    }
 
     @Override
     public String toString() {
@@ -30,5 +38,7 @@ public class Service {
                 ", nOfP=" + nOfP +
                 '}';
     }
+
+
     //3.메소드
 }

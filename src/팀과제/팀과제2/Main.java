@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         MemberInfo[] memberInfos = new MemberInfo[100];
+        Service[] services = new Service[100];
+
+        int no = 0;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -15,7 +18,8 @@ public class Main {
         System.out.println(standard);
         System.out.println(premium);
 
-        int no = 0;
+        int logno = 0;
+
         while (true){
             System.out.println("------------------------");
             System.out.println("1.회원가입 | 2.로그인");
@@ -48,10 +52,14 @@ public class Main {
                 System.out.print("비밀번호 : ");
                 String inPw = scanner.next();
 
+
+
                 for(int i=0; i<memberInfos.length; i++){
                     if(memberInfos[i]==null)break;
                     memberInfos[i].id.equals(inId);
                     memberInfos[i].pw.equals(inPw);
+
+                    logno = no;
 
                 }//ch2 for e
                 while (true) {
@@ -78,6 +86,8 @@ public class Main {
                             System.out.println("인원수 : " + basic.nOfP);
                             System.out.println("요금 : " + price + "원");
 
+                            Service serviceInfo = new Service(no, basic._class, basic.tb, basic.month, basic.nOfP);
+
 
                         } else if (ch3 == 2) {
                             System.out.print("이용할 달 : ");
@@ -90,6 +100,8 @@ public class Main {
                             System.out.println("인원수 : " + standard.nOfP);
                             System.out.println("요금 : " + price + "원");
 
+                            Service serviceInfo = new Service(no, standard._class, standard.tb, standard.month, standard.nOfP);
+
                         } else if (ch3 == 3) {
                             System.out.print("이용할 달 : ");
                             int mon = scanner.nextInt();
@@ -100,9 +112,15 @@ public class Main {
                             System.out.println("용량 : " + premium.tb);
                             System.out.println("인원수 : " + premium.nOfP);
                             System.out.println("요금 : " + price + "원");
+
+                            Service serviceInfo = new Service(no, premium._class, premium.tb, premium.month, premium.nOfP);
                         }
 
                     } else if (ch2 == 2) {
+
+                        if(logno==no){
+                            System.out.println(services);
+                        }
 
                     } else if (ch2 == 3) {
                         System.out.println("종료되었습니다.");

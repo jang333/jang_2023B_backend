@@ -36,7 +36,7 @@ public class MemberSys {
 				mem.age=age;
 
 				for(int i =0 ; i < array.length; i++){
-					System.out.println(array[i]);
+
 				}
 
 			}
