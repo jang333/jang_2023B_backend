@@ -14,7 +14,8 @@ public class Level3_5 {
 		String authNumber = "";
 		
 		/* 문제풀이 위치 */
-		
+		Random random = new Random();
+
 		/* ----------- */
 
 	}

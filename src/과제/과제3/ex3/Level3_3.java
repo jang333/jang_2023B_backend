@@ -15,6 +15,8 @@ public class Level3_3 {
 		int july4 = 11738700;
 		
 		/* 문제풀이 위치 */
+		System.out.println("------7월 매출액------");
+
 		
 		/* ----------- */
 	}

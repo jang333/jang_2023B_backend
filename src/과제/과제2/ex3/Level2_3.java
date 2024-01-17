@@ -18,7 +18,13 @@ public class Level2_3 {
 		System.out.println("국어\t영어\t수학\t합계\t평균\t3배수\t8배수\t홀짝\t결과");
 		
 		/* 문제풀이 위치 */
-
+		int total = kor+eng+mat;
+		double avg = (double)(kor+eng+mat)/3;
+		boolean three = total%3==0?true : false;
+		boolean e = total%8==0? true : false;
+		String a = total%2!=0 ? "홀수" : "짝수";
+		String b = total>=65 ? "합격" : "탈락";
+		System.out.printf("%d\t%d\t%d\t%d\t%.1f\t%s\t%s\t%s\t%s",kor,eng,mat,total,avg,three,e,a,b);
 		/* ----------- */
 	}
 }
