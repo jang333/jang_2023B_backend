@@ -17,6 +17,7 @@ public class MemberController {
         //1.유효성검사 처리
         //2.view 에게 받은 객체를 dao에게 전달 후 처리 결과를 받기
         boolean result = MemberDao.getInstance().signup(memberDto);
+        System.out.println("[4]result = " + result);
         return result;
     }//f end
 
