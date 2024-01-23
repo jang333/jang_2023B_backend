@@ -1,19 +1,15 @@
-package 과제.과제6;
+package 과제.과제7;
 
-public class Member {
-
-    //멤버
-    //1. 필드
+public class Dto {
+    //필드
     private String id;
     private String pw;
     private String name;
     private String phone;
     private int age;
 
-
-
-    //2. 생성자
-    public Member(String id, String pw, String name, String phone, int age){
+    //생성자
+    public Dto(String id, String pw, String name, String phone, int age){
         this.id=id;
         this.pw=pw;
         this.name=name;
@@ -22,9 +18,7 @@ public class Member {
 
     }
 
-    //3.메소드
-
-
+    //메소드
     public String getId() {
         return id;
     }

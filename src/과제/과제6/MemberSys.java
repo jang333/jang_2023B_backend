@@ -1,7 +1,7 @@
 package 과제.과제6;
 import java.util.Scanner;
 
-public class MemberSys { // class s 
+public class MemberSys { // class s
 	public static void main(String[] args) {
 
 		Member[] members = new Member[100];
@@ -33,7 +33,7 @@ public class MemberSys { // class s
 						members[i] = member;
 
 						break;
-                    }
+					}
 				}
 				for(int i = 0 ; i<members.length; i++){
 					if(members[i]!= null){
@@ -54,8 +54,7 @@ public class MemberSys { // class s
 					if (members[i]==null)break;
 					if(members[i].getId().equals(id) && members[i].getPw().equals(pw)){
 						System.out.println("로그인 성공");
-					}else {
-						System.out.println("로그인 실패");
+						break;
 					}
 				}
 
@@ -67,17 +66,33 @@ public class MemberSys { // class s
 				System.out.print("전화번호 : ");	String phone = sc.next();
 
 				for(int i = 0 ; i<members.length; i++){
-
+					if(members[i] == null)break;
+					if(members[i].getName().equals(name)&&members[i].getPhone().equals(phone)){
+						System.out.println("아이디 : "+members[i].getId());
+						break;
+					}
 				}
 
 			}
 			else if( ch == 4 ) {//4.비밀번호찾기
 
+				//1. 입력받기
+				System.out.print("아이디 : ");		String id = sc.next();
+				System.out.print("전화번호 : ");	String phone = sc.next();
+
+				for(int i = 0 ; i<members.length; i++){
+					if(members[i] == null)break;
+					if(members[i].getId().equals(id)&&members[i].getPhone().equals(phone)){
+						System.out.println("비밀번호 : "+members[i].getPw());
+						break;
+					}
+				}
+
 			}
 
 		} // w e
-	} // m e 
-} // class e 
+	} // m e
+} // class e
 /*
 	주제 : 회원제 시스템 part2
 	 	- Member , MemberSys 클래스를 이용하여 아래 조건에 따라. 코드를 완성하시오.
@@ -96,44 +111,30 @@ public class MemberSys { // class s
 
 		1. 초기 메뉴
 			1. 회원가입 2.로그인 3.아이디찾기 4.비밀번호찾기
-			
-		2. 조건 기능 
-			1. 회원가입 메소드 
-				1. 아이디 , 비밀번호 , 이름 , 전화번호 , 나이  각 입력받아 저장 
+
+		2. 조건 기능
+			1. 회원가입 메소드
+				1. 아이디 , 비밀번호 , 이름 , 전화번호 , 나이  각 입력받아 저장
 				2. Member 객체화
-				3. 객체를 배열 저장 
-				 
+				3. 객체를 배열 저장
+
 			2. 로그인 메소드
-				1. 아이디 , 비밀번호 입력받아 저장 
+				1. 아이디 , 비밀번호 입력받아 저장
 				2. 입력받은 값과 배열내 동일한 값 찾기
-					- 만약에 동일한 값 있으면 로그인 성공 
+					- 만약에 동일한 값 있으면 로그인 성공
 					- 아니면 실패
-					 
+
 			3. 아이디찾기 메소드
 				1. 이름 , 전화번호 입력받아 저장
 				2. 입력받은 값과 배열내 동일한 값 찾기
-					- 만약에 동일한 값 있으면 찾은 아이디 출력 
+					- 만약에 동일한 값 있으면 찾은 아이디 출력
 					- 아니면 없다.
-					 
-			4. 비밀번호찾기 메소드 
+
+			4. 비밀번호찾기 메소드
 				1. 아이디 , 전화번호 입력받아 저장
 				2. 입력받은 값과 배열내 동일한 값 찾기
 					- 만약에 동일한 값 있으면 찾은 비밀번호 출력
 					- 아니면 없다.
 
-			
+
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
