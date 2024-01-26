@@ -1,6 +1,9 @@
 package day18.model.dao;
 
 import day18.model.dto.BoardDto;
+import day18.model.dto.CategoryDto;
+
+import java.util.ArrayList;
 
 public class BoardDao extends Dao {
     //싱글톤
@@ -29,6 +32,31 @@ public class BoardDao extends Dao {
             System.out.println(e);
         }
         return false;
+    }
+
+    // public BoardDto[] categoryPrint(BoardDto boardDto){
+    public ArrayList<CategoryDto> categoryPrint(CategoryDto categoryDto){
+        try {
+            String sql ="select * from category order by cno";
+            ps = conn.prepareStatement(sql);
+            rs =    ps.executeQuery();
+
+            ArrayList<CategoryDto>categoryDtos = new ArrayList<>();
+
+            while( rs.next() ){
+
+                CategoryDto dto = new CategoryDto();
+                dto.setCno( rs.getInt("cno") );
+                dto.setCname( rs.getString("cname"));
+                categoryDtos.add( dto );
+            }
+
+            return categoryDtos;
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
     }
 
 }
