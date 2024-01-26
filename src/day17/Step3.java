@@ -1,6 +1,4 @@
-package Day17;
-
-import com.mysql.cj.protocol.Resultset;
+package day17;
 
 import java.sql.*;
 import java.util.InputMismatchException;

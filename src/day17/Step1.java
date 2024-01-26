@@ -1,4 +1,4 @@
-package Day17;
+package day17;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
