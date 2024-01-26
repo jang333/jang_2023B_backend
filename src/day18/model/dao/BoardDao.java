@@ -59,4 +59,66 @@ public class BoardDao extends Dao {
         return null;
     }
 
+    //모든글출력
+    public ArrayList<BoardDto> boardPrint(BoardDto boardDto){
+        try{
+            String sql = "select*from board";
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            ArrayList<BoardDto>boardDtos = new ArrayList<>();
+
+            while (rs.next()){
+                BoardDto dto = new BoardDto();
+                rs.getInt("bno");
+                rs.getInt("cno");
+                rs.getInt("mno");
+                rs.getString("bdate");
+                rs.getInt("bview");
+                rs.getString("btitle");
+                boardDtos.add(dto);
+            }
+            return boardDtos;
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+
+    }
+
+    //작성자 아이디 가져오기
+    public String mid(int mno){
+        try {
+            String sql = "select*from member";
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            if(rs.next()){
+                System.out.println(rs.getString("mid"));
+                return rs.getString("mid");
+
+            }
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
+
+    //카테고리 가져오기
+    public String category(int cno){
+        try {
+            String sql = "select*from category order by cno";
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            if (rs.next()){
+                return rs.getString("cname");
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
+
 }

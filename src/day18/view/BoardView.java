@@ -1,7 +1,11 @@
 package day18.view;
 
+import day18.controller.BoardController;
 import day18.controller.MemberController;
+import day18.model.dao.BoardDao;
+import day18.model.dto.BoardDto;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BoardView {
@@ -17,7 +21,12 @@ public class BoardView {
     public void run(){
         while (true){
             System.out.println("===========ezen 게시판===========");
-            //추후에 현재 게시물 출력 메소드가 들어갈 자리
+            ArrayList<BoardDto> boardDtos = BoardController.getInstance().boardPrint(new BoardDto());
+            for(int i = 0 ; i<boardDtos.size();i++){
+                String mid = BoardController.getInstance().mid(i);
+                String cname = BoardController.getInstance().category(i);
+                System.out.println(mid+cname);
+            }
             System.out.println("1.글쓰기 2.글보기 3.로그아웃");
             System.out.print("선택 > ");int ch = scanner.nextInt();
 

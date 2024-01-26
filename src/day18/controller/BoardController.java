@@ -34,6 +34,26 @@ public class BoardController {
 
     }
 
+    //모든글 출력
+    public ArrayList<BoardDto> boardPrint(BoardDto boardDto){
+        ArrayList<BoardDto> result = null;
+        result = BoardDao.getInstance().boardPrint(boardDto);
+        return result;
+    }
+
+    //작성자 아이디가져오기
+    public String mid(int mno){
+        String result = null;
+        result = BoardDao.getInstance().mid(mno);
+        return result;
+    }
+
+    //카테고리 가져오기
+    public String category(int cno){
+        String result = null;
+        result = BoardDao.getInstance().category(cno);
+        return result;
+    }
 
 
 }
