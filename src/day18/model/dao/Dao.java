@@ -6,6 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class Dao {
+    // 접근제한자
+    /*
+        public           : 모든 패키지 접근 가능
+        private          : 현재 클래스 접근 가능
+        protected        : 동일 패키지 접근 가능 + 상속관계 가능
+        default(생략시)   : 동일 패키지 접근 가능
+
+        클래스/인터페이스   : public , default
+        필드               :   public ,  private , protected , default(생략시)
+        생성자             : public ,  private , protected , default(생략시)
+        메소드             : public ,  private , protected , default(생략시)
+    */
 
     //1.필드
     //DB 연동 관련 인터페이스

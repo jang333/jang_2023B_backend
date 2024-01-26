@@ -21,7 +21,9 @@ public class BoardView {
             System.out.println("1.글쓰기 2.글보기 3.로그아웃");
             System.out.print("선택 > ");int ch = scanner.nextInt();
 
-            if(ch==1){}
+            if(ch==1){
+                WriteView.getInstance().write();
+            }
             else if(ch==2){}
             else if(ch==3){
                 System.out.println("<안내> 로그아웃이 되었습니다.");
